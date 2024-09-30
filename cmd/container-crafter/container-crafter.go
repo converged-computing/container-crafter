@@ -30,9 +30,10 @@ func main() {
 	createCmd := parser.NewCommand("create", "Create matrix of containers according to a max size and number of layers")
 
 	// Create arguments
-	uri := createCmd.String("u", "uri", &argparse.Options{Help: "Unique resource identifier (URI) to use, without tag"})
-	layers := createCmd.Int("l", "layers", &argparse.Options{Help: "Number of layers"})
-	imageSize := createCmd.Int("s", "image-size", &argparse.Options{Help: "Total image size to generate"})
+	uri := createCmd.String("u", "uri", &argparse.Options{Default: "test", Help: "Unique resource identifier (URI) to use, without tag"})
+
+	// Read most metadata from a config file
+	config := createCmd.String("c", "config", &argparse.Options{Help: "Study yaml configuration file to replace arguments above"})
 
 	// Now parse the arguments
 	err := parser.Parse(os.Args)
@@ -42,8 +43,11 @@ func main() {
 		return
 	}
 
+	if *config == "" {
+		log.Fatalf("You must provide a config file with --config to indicate preferences for your builds.")
+	}
 	if createCmd.Happened() {
-		err := build.Run(*uri, *layers, *imageSize)
+		err := build.Run(*uri, *config)
 		if err != nil {
 			log.Fatalf("Issue with create: %s\n", err)
 		}

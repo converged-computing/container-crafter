@@ -5,7 +5,10 @@ import (
 )
 
 // Create a matrix of builds with a particular layer count and size
-func Run(uri string, layers, imageSize int) error {
-	builder := build.NewBuildMatrix(uri, layers, imageSize)
+func Run(uri, configFile string) error {
+	builder, err := build.NewBuildMatrix(uri, configFile)
+	if err != nil {
+		return err
+	}
 	return builder.Build()
 }

@@ -1,40 +1,40 @@
 module github.com/converged-computing/container-crafter
 
-go 1.20
+go 1.22.0
+
+toolchain go1.22.6
 
 require (
 	github.com/akamensky/argparse v1.4.0
-	github.com/converged-computing/jsongraph-go v0.0.0-20240229082022-c6887a5a00fe
-	github.com/converged-computing/nfd-source v0.0.0-20240224025007-20d686e64926
-	github.com/jedib0t/go-pretty/v6 v6.5.4
-	github.com/moby/moby v25.0.3+incompatible
-	github.com/opencontainers/image-spec v1.1.0
-	github.com/scylladb/go-set v1.0.2
-	golang.org/x/sys v0.16.0
-	oras.land/oras-go/v2 v2.4.0
-	sigs.k8s.io/yaml v1.4.0
+	github.com/docker/docker v27.3.1+incompatible
+	github.com/moby/moby v27.3.1+incompatible
+	golang.org/x/exp v0.0.0-20240909161429-701f63a606c0
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
+	github.com/Microsoft/go-winio v0.4.14 // indirect
 	github.com/containerd/log v0.1.0 // indirect
-	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
-	github.com/cyphar/filepath-securejoin v0.2.4 // indirect
-	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/fsnotify/fsnotify v1.7.0 // indirect
-	github.com/godbus/dbus/v5 v5.0.6 // indirect
-	github.com/klauspost/cpuid/v2 v2.2.7 // indirect
-	github.com/mattn/go-runewidth v0.0.15 // indirect
-	github.com/moby/sys/mountinfo v0.5.0 // indirect
+	github.com/distribution/reference v0.6.0 // indirect
+	github.com/docker/go-connections v0.5.0 // indirect
+	github.com/docker/go-units v0.4.0 // indirect
+	github.com/felixge/httpsnoop v1.0.4 // indirect
+	github.com/go-logr/logr v1.4.2 // indirect
+	github.com/go-logr/stdr v1.2.2 // indirect
+	github.com/gogo/protobuf v1.3.2 // indirect
+	github.com/moby/docker-image-spec v1.3.1 // indirect
+	github.com/moby/term v0.5.0 // indirect
+	github.com/morikuni/aec v1.0.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
-	github.com/opencontainers/runc v1.1.12 // indirect
-	github.com/opencontainers/runtime-spec v1.0.3-0.20210326190908-1c3f411f0417 // indirect
-	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/rivo/uniseg v0.2.0 // indirect
-	github.com/sirupsen/logrus v1.9.3 // indirect
-	github.com/stretchr/objx v0.5.1 // indirect
-	github.com/stretchr/testify v1.8.4 // indirect
-	golang.org/x/exp v0.0.0-20240222234643-814bf88cf225 // indirect
-	golang.org/x/sync v0.6.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
+	github.com/opencontainers/image-spec v1.1.0 // indirect
+	github.com/pkg/errors v0.9.1 // indirect
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.55.0 // indirect
+	go.opentelemetry.io/otel v1.30.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.30.0 // indirect
+	go.opentelemetry.io/otel/metric v1.30.0 // indirect
+	go.opentelemetry.io/otel/sdk v1.30.0 // indirect
+	go.opentelemetry.io/otel/trace v1.30.0 // indirect
+	golang.org/x/sys v0.25.0 // indirect
+	golang.org/x/time v0.6.0 // indirect
 	gotest.tools/v3 v3.5.1 // indirect
 )
