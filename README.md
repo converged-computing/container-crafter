@@ -39,7 +39,7 @@ So we are going to generate our builds from a configuration file [examples/study
 docker push ghcr.io/converged-computing/container-chonks --all-tags
 ```
 
-If you need to cleanup:
+After push, depending on the registry you might need to make the images public. If you need to cleanup locally:
 
 ```bash
 docker rmi $(docker images --filter=reference="*ghcr.io/converged-computing/container-chonks*" -q)
