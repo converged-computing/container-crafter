@@ -25,22 +25,29 @@ The experiment I had in mind (automation, configs, etc) is going to be under the
 
 ## Usage
 
-For the study we are doing, we are interested in these three maximum sizes:
+### Parameter Space
+
+For the study we are doing, we are interested in these maximum sizes:
 
 - 53,702,097 bytes  (25th percentile)
 - 132,399,102 bytes  (50th percentile)
 - 392,602,448 bytes  (75th percentile)
 - 19,039,736,629 bytes (100th percentile)
 
-These are percentiles of total sizes from the Dockerfile database, which we consider a reasonable sample of the ecosystem. For the number of layers:
+These are percentiles of total sizes from the [Dockerfile database](https://github.com/converged-computing/container-chonks/tree/main/experiments/dockerfile), which we consider a reasonable sample of the ecosystem. For the number of layers:
 
 - 6 (25th percentile)
 - 9 (50th percentile)
 - 14 (75th percentile)
 - 153 (100th percentile) 
 
-So we are going to generate our builds from a configuration file [examples/study.yaml](examples/study.yaml)
+Note that Docker does not allow you to build over 127 layers, although it will technically work for other container runtimes. We are setting a limit at 127 to mirror what the average user would have access to. 
 
+### Matrix Generation
+
+We and then are going to generate our builds from a configuration file [examples/study.yaml](examples/study.yaml).
+The matrix will be represented in a list of images, where each image has a particular total size and number of layers, and the
+layer size for each is calculated based on that.
 
 ```bash
 # Build all images
@@ -58,6 +65,7 @@ docker rmi $(docker images --filter=reference="*ghcr.io/converged-computing/cont
 
 The images have layers that are arbitrary content written to a random file name, so they are unique.
 This means if you are doing a pulling study, the cache won't be used (which is the goal).
+Don't forget to make the repository public, if appropriate.
 
 ## License
 
