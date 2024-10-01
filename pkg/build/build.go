@@ -28,9 +28,7 @@ type BuildMatrix struct {
 }
 
 // NewBuildMatrix generates a new build matrix spec
-func NewBuildMatrix(uri string,
-	configFile string,
-) (*BuildMatrix, error) {
+func NewBuildMatrix(uri string, configFile string) (*BuildMatrix, error) {
 
 	// Do we have a config file?
 	cfg, err := config.Load(configFile)

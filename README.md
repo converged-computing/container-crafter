@@ -1,8 +1,17 @@
 # Container Crafter
 
+```console
+   _   _   _   _   _   _   _   _   _     _   _   _   _   _   _   _  
+  / \ / \ / \ / \ / \ / \ / \ / \ / \   / \ / \ / \ / \ / \ / \ / \ 
+ ( c | o | n | t | a | i | n | e | r ) ( c | r | a | f | t | e | r )
+  \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/   \_/ \_/ \_/ \_/ \_/ \_/ \_/  
+
+```
+
 I want a tool that can programatically generate sets of containers with the following features:
 
-- Control the number of layers, and shared layers between the set
+- Control the number of layers and total size of image
+- Read an experiment from a configuration file
 - Build to a maximum size, size, or size distribution per layer
 
 ## Goals
@@ -11,6 +20,8 @@ The goals are to be able to do a controlled experiment that varies the size of t
 
 1. Given the equivalent total size, does it take longer (and thus more costly) to pull many smaller layers, or few larger ones?
 2. What happens to this pattern as the pulls are scaled across many nodes?
+
+The experiment I had in mind (automation, configs, etc) is going to be under the [container-chonks](https://github.com/converged-computing/container-chonks/tree/main/experiments/pulling) experiment set, where I'm looking at containers across the ecosystem and assessing pull times.
 
 ## Usage
 
