@@ -65,10 +65,15 @@ func (m *BuildMatrix) Build() error {
 		size := imageSize - 5000000
 
 		for _, layerCount := range m.Study.IterLayers() {
-			layerSize := size / layerCount
 
 			// Assemble tag based on layers and total size
+			// This layer count includes the base busybox
 			tag := fmt.Sprintf("%s:%d-layers-size-%d-bytes", m.URI, layerCount, size)
+
+			// Account for base layer for actual count
+			layerCount -= 1
+			layerSize := size / layerCount
+
 			err := m.buildImage(tag, layerSize, layerCount)
 			if err != nil {
 				return err

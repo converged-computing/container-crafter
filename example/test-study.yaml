@@ -1,0 +1,21 @@
+# URI is the base or root to build
+uri: ghcr.io/converged-computing/container-chonks
+
+# Sizes are in bytes, the total size for the container
+sizes:
+  - total: 53702097
+  - total: 132399102
+  - total: 392602448
+  - total: 19039736629
+
+# Layers are the number of layers to do for each size
+# The build will only happen for layer / image size combinations that
+# produce layer sizes <= 10MB (registry limit)
+layers:
+  - min: 1
+    max: 14
+  - exact: 25 
+  - exact: 50
+  - exact: 75
+  - exact: 100
+  - exact: 125

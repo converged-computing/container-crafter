@@ -1,21 +1,28 @@
 # URI is the base or root to build
-uri: ghcr.io/converged-computing/container-chonks
+uri: ghcr.io/converged-computing/container-chonks-run1
 
 # Sizes are in bytes, the total size for the container
 sizes:
-  - total: 53702097
-  - total: 132399102
-  - total: 392602448
-  - total: 19039736629
+  - total: 53702097     # 25th
+  - total: 58049507.8   # 30th
+  - total: 71460665.0   # 35th
+  - total: 91388866.2   # 40th
+  - total: 108513992.4  # 45th
+  - total: 132399102    # 50th
+  - total: 163049655.0  # 55th
+  - total: 218665412.8  # 60th
+  - total: 271728773.4  # 65th
+  - total: 320018606.2  # 70th
+  - total: 392602448    # 75th
+  - total: 496514346.8  # 80th
+  - total: 687439577.6  # 85th
+  - total: 1181249324.6 # 90th
+  - total: 2775722493.4 # 95th
+  - total: 19039736629  # 100th
 
 # Layers are the number of layers to do for each size
-# The build will only happen for layer / image size combinations that
-# produce layer sizes <= 10MB (registry limit)
+# We will do the median and the extreme (max)
+# https://github.com/moby/moby/blob/4001d0704ba38a82e1dbc26f0593fca66db1cb98/layer/layer_store.go#L28
 layers:
-  - min: 1
-    max: 14
-  - exact: 25 
-  - exact: 50
-  - exact: 75
-  - exact: 100
+  - exact: 9
   - exact: 125
