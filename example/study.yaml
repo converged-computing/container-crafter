@@ -18,6 +18,9 @@ sizes:
   - total: 687439577.6  # 85th
   - total: 1181249324.6 # 90th
   - total: 2775722493.4 # 95th
+  - total: 6841726027.3
+  - total: 10907729561.2 # range between the two
+  - total: 14973733095.1
   - total: 19039736629  # 100th
 
 # Layers are the number of layers to do for each size
