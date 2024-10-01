@@ -1,5 +1,7 @@
 # Container Crafter
 
+[![DOI](https://zenodo.org/badge/863835007.svg)](https://doi.org/10.5281/zenodo.13871919)
+
 ```console
    _   _   _   _   _   _   _   _   _     _   _   _   _   _   _   _  
   / \ / \ / \ / \ / \ / \ / \ / \ / \   / \ / \ / \ / \ / \ / \ / \ 
